@@ -4,6 +4,7 @@ import { client } from "@/lib/sanity.client";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import PreviweBlogList from "@/components/PreviewBlogList";
 import BlogList from "@/components/BlogList";
+import Banner from "@/components/Banner";
 
 const query = groq`
     *[_type == 'post'] {
@@ -18,21 +19,29 @@ const HomePage = async () => {
 
     if (previewData()) {
         return (
-            <PreviewSuspense
-                fallback={
-                    <div role='status'>
-                        <p className='text-center text-lg animate-pulse text-[#D6AF33]'>
-                            Loading preview data...
-                        </p>
-                    </div>
-                }
-            >
-                <PreviweBlogList query={query} />
-            </PreviewSuspense>
+            <>
+                <Banner />
+                <PreviewSuspense
+                    fallback={
+                        <div role='status'>
+                            <p className='text-center text-lg animate-pulse text-[#D6AF33]'>
+                                Loading preview data...
+                            </p>
+                        </div>
+                    }
+                >
+                    <PreviweBlogList query={query} />
+                </PreviewSuspense>
+            </>
         );
     }
 
-    return <BlogList posts={posts} />;
+    return (
+        <>
+            <Banner />
+            <BlogList posts={posts} />;
+        </>
+    );
 };
 
 export default HomePage;

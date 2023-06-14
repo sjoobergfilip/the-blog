@@ -93,13 +93,16 @@ body {
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background-color: #0c2309;
+    color: black;
+    background-color: #fdfdf8;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+.banner {
+    height: 600px;
 }
 
 @media (prefers-color-scheme: dark) {

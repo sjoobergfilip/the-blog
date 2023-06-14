@@ -11,11 +11,12 @@ type Base = {
 interface Post extends Base {
     auther: Autoher;
     body: Block[];
-    category: Category[];
+    categories: Category[];
     mainImage: Image;
     slug: Slug;
     title: string;
     description: string;
+    auther: Autoher;
 }
 
 interface Autoher extends Base {
