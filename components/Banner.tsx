@@ -47,7 +47,16 @@ const Banner = async () => {
                                 {latestPost.description}
                             </p>
                             <div className='flex justify-between italic ml-2 mt-4'>
-                                <div>
+                                <div className='flex justify-center items-center'>
+                                    <Image
+                                        className='h-10 w-10 rounded-full mr-4'
+                                        src={urlFor(
+                                            latestPost.author.image
+                                        ).url()}
+                                        alt={latestPost.author.name}
+                                        width={40}
+                                        height={40}
+                                    ></Image>
                                     <p>{latestPost.author.twitterName}</p>
                                 </div>
                                 <div className='text-3xl text-[#C79433]'>

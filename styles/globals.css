@@ -105,6 +105,13 @@ a {
     height: 600px;
 }
 
+section p {
+    margin-bottom: 15px;
+}
+section p em {
+    margin: 0;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;

@@ -7,15 +7,17 @@ import BlogList from "@/components/BlogList";
 import Banner from "@/components/Banner";
 
 const query = groq`
-    *[_type == 'post'] {
+    *[_type == 'post'] | order(_createdAt desc)
+    {
         ...,
         author ->,
         categories[]->,
-    } | order(_createdAt desc)
+    }
 `;
 
 const HomePage = async () => {
     const posts = await client.fetch(query);
+    const filterdArray = posts.slice(1);
 
     if (previewData()) {
         return (
@@ -39,7 +41,7 @@ const HomePage = async () => {
     return (
         <>
             <Banner />
-            <BlogList posts={posts} />;
+            <BlogList posts={filterdArray} />
         </>
     );
 };

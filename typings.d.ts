@@ -16,7 +16,7 @@ interface Post extends Base {
     slug: Slug;
     title: string;
     description: string;
-    auther: Autoher;
+    author: Autoher;
 }
 
 interface Autoher extends Base {
@@ -24,6 +24,8 @@ interface Autoher extends Base {
     image: Image;
     slug: Slug;
     title: string;
+    name: string;
+    twitterName: string;
 }
 
 interface Image {
