@@ -111,6 +111,14 @@ section p {
 section p em {
     margin: 0;
 }
+.custom-min-height {
+    min-height: calc(100vh - 100px);
+}
+@media (min-width: 768px) {
+    .custom-min-height {
+        min-height: 70%;
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     html {

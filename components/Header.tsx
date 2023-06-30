@@ -16,10 +16,10 @@ const Header = () => {
                     />
                 </Link>
             </div>
-            <div className='flex text-white'>
-                <div className='flex items-center'>
+            <div className='text-white flex'>
+                <div className='md:flex items-center hidden'>
                     <Link
-                        className='mr-5 text '
+                        className='mr-5 text'
                         target='_blank'
                         href='https://printler.com/sv/print-shop/17211-filip-sjoberg/'
                     >

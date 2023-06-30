@@ -10,6 +10,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            spacing: {
+                "minus-100px": "calc(100vh - 100px)",
+            },
             colors: {
                 "sanity-gray": "#1A1A1A",
             },

@@ -12,7 +12,7 @@ const BlogList = ({ posts }: Props) => {
         <div className='max-w-5xl mx-auto'>
             <hr className='mb-10' />
 
-            <div className='grid grid-cols-1 gap-x-10 gap-y-16 px-10 pb-24 md:grid-cols-2'>
+            <div className='grid grid-cols-1 md:gap-x-10 md:gap-y-16 md:px-10 pb-24 md:grid-cols-2'>
                 {/* Posts */}
                 {posts.map((post) => (
                     <ClientSideRoute
@@ -28,7 +28,7 @@ const BlogList = ({ posts }: Props) => {
                                     fill
                                 ></Image>
                             </div>
-                            <div className='mt-5 flex-1'>
+                            <div className='mt-5 flex-1 px-10 pb-16 md:pb-0'>
                                 <div className='flex'>
                                     <h3 className='uppercase font-bold text-2xl text-[#C79433] text-right mr-4 leading-none'>
                                         {" "}
@@ -60,7 +60,7 @@ const BlogList = ({ posts }: Props) => {
                                 <div className='flex justify-between mt-4'>
                                     <div className='flex justify-center items-center'>
                                         <Image
-                                            className='h-10 w-10 rounded-full'
+                                            className='h-10 w-10 rounded-full mr-3'
                                             src={urlFor(
                                                 post.author.image
                                             ).url()}

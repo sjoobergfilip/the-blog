@@ -23,10 +23,12 @@ const Post = async ({ params: { slug } }: Props) => {
 
     const post = await client.fetch(query, { slug });
 
-    console.log(post);
+    if (post.mainImage) {
+        console.log("i have main image", post.mainImage);
+    }
 
     return (
-        <article className='px-10 pb-28 pt-10'>
+        <article className='px-10 pb-16 pt-10'>
             <section className='space-y-2 border'>
                 <div className='min-h-56 relative flex flex-col justify-between md:flex-row'>
                     <div className='absolute top-0 h-full w-full p-10 opacity-20 blur-sm'>
@@ -40,7 +42,7 @@ const Post = async ({ params: { slug } }: Props) => {
                     <section className='w-full bg-[#0C2309] p-5 text-[#fff]'>
                         <div className='flex flex-col justify-between gap-y-5 md:flex-row'>
                             <div>
-                                <h1 className='text-4xl font-extrabold uppercase underline decoration-[#C79433] decoration-4'>
+                                <h1 className='text-3xl md:text-4xl font-extrabold uppercase underline decoration-[#C79433] decoration-4'>
                                     {post.title}
                                 </h1>
                                 <p>
