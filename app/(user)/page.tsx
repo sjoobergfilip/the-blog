@@ -22,7 +22,7 @@ const HomePage = async () => {
     if (previewData()) {
         return (
             <>
-                <Banner />
+                <Banner posts={posts[0]} />
                 <PreviewSuspense
                     fallback={
                         <div role='status'>
@@ -40,7 +40,7 @@ const HomePage = async () => {
 
     return (
         <>
-            <Banner />
+            <Banner posts={posts[0]} />
             <BlogList posts={filterdArray} />
         </>
     );
